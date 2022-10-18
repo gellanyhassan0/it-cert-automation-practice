@@ -45,3 +45,16 @@ def file_date(filename):
 
 file_date("newfile.txt")
 
+import os
+def parent_directory():
+      # Create a relative path to the parent 
+      # of the current working directory 
+
+      directory = os.path.basename(os.getcwd())
+      parent_dir = os.path.abspath(os.getcwd())
+      path = os.path.join(parent_dir, directory)
+      os.mkdir(path)
+      print(os.getcwd())
+      print(os.listdir(os.getcwd()))
+  
+parent_directory()
