@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+'''https://stackoverflow.com/questions/68148727/why-using-python-interact-with-operating-systems-week-1-qwiklabs-assessment'''
+
 import requests
 import socket
 
