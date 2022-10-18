@@ -32,18 +32,21 @@ def new_directory(directory, filename):
 print(new_directory("PythonPrograms", "script.py"))
 
 import os
+import os.path, time
 import datetime
 from datetime import date
 
 def file_date(filename):
   with open(filename, "w") as file :
     file.close()
-  print(os.listdir(os.getcwd()))
+  #print(os.listdir(os.getcwd()))
 
-  timestamp = date.today()
-  print(timestamp.strftime('%Y-%m-%d'))
+  modTimesinceEpoc = os.path.getmtime(filename)
+  # Convert seconds since epoch to readable timestamp
+  modificationTime = time.strftime('%Y-%m-%d', time.localtime(modTimesinceEpoc))
+  return ("{}".format(modificationTime))
 
-file_date("newfile.txt")
+print(file_date("newfile.txt"))
 
 
 import os
